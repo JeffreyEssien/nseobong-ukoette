@@ -20,7 +20,7 @@ export default function Contact() {
   }
 
   return (
-    <section className="py-12 px-6 md:px-12 space-y-12">
+    <section className="py-12 px-6 md:px-12 space-y-12 bg-white">
       {/* Title */}
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ export default function Contact() {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   required
-                  className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:border-transparent outline-none transition"
+                  className="text-black w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:border-transparent outline-none transition"
                 />
                 <input
                   type="email"
@@ -102,14 +102,14 @@ export default function Contact() {
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   required
-                  className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:border-transparent outline-none transition"
+                  className="text-black w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:border-transparent outline-none transition"
                 />
                 <textarea
                   placeholder="Your message"
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   required
-                  className="w-full p-3 border border-slate-200 rounded-lg h-32 resize-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent outline-none transition"
+                  className="text-black w-full p-3 border border-slate-200 rounded-lg h-32 resize-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent outline-none transition"
                 ></textarea>
               </div>
 

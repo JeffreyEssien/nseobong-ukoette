@@ -40,7 +40,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-slate-700 text-lg leading-relaxed"
+            className="text-slate-700 l:text-lg leading-relaxed"
           >
             A <span className="font-semibold text-indigo-600">finance and customer service professional</span> 
             with over 15 years of experience helping clients and businesses achieve growth, trust, 

@@ -1,23 +1,21 @@
 import './globals.css'
-import { ReactNode } from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import type { Metadata } from 'next'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Nseobong Ukoette — Portfolio',
   description:
-    'Portfolio of Nseobong Ukoette — Product Officer, Relationship Manager, and Healthcare Professional.',
+    'Portfolio of Nseobong Ukoette — Finance & Customer Service Professional focused on relationship management and growth.',
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-gradient-to-br from-indigo-50 via-white to-cyan-50 text-slate-800">
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <main className="flex-1 container mx-auto px-6 py-12">{children}</main>
-          <Footer />
-        </div>
+      <body className="min-h-screen flex flex-col bg-white">
+        <Header />
+        <main className="flex-1 pt-20">{children}</main>
+        <Footer />
       </body>
     </html>
   )
