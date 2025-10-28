@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import profile from '../../public/profile.jpg'
 
 export default function Home() {
   return (
@@ -80,7 +81,7 @@ export default function Home() {
         >
           <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-white">
             <Image
-              src="/profile.jpg" // replace with her actual image
+              src={profile} // replace with her actual image
               alt="Nseobong Ukoette"
               fill
               className="object-cover"
