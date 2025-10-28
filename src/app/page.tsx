@@ -1,65 +1,104 @@
-import Image from "next/image";
+'use client'
+
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="relative min-h-[90vh] flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-cyan-50 px-6 md:px-12 py-16">
+      {/* Animated background blur blobs */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.5 }}
+        transition={{ duration: 1 }}
+        className="absolute inset-0 -z-10"
+      >
+        <div className="absolute top-10 left-10 w-64 h-64 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"></div>
+      </motion.div>
+
+      {/* Main Content Card */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative max-w-5xl w-full bg-white/60 backdrop-blur-md border border-white/40 rounded-3xl shadow-xl overflow-hidden flex flex-col-reverse md:flex-row items-center"
+      >
+        {/* Text Section */}
+        <div className="w-full md:w-1/2 p-8 md:p-12 space-y-6 text-center md:text-left">
+          <motion.h1
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-4xl md:text-5xl font-bold text-indigo-700 leading-tight"
           >
+            Hi, I’m <span className="text-indigo-500">Nseobong Ukoette</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="text-slate-700 text-lg leading-relaxed"
+          >
+            A <span className="font-semibold text-indigo-600">finance and customer service professional</span> 
+            with over 15 years of experience helping clients and businesses achieve growth, trust, 
+            and measurable results. I specialize in <span className="font-medium text-indigo-600">
+            relationship management, deposit mobilization,</span> and <span className="font-medium text-indigo-600">
+            financial product strategy</span>. My goal is simple — to create lasting value through 
+            authentic connections and smart financial solutions.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="flex flex-wrap justify-center md:justify-start gap-4 pt-4"
+          >
+            <Link
+              href="/experience"
+              className="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700 transition font-medium"
+            >
+              View My Experience
+            </Link>
+            <Link
+              href="/contact"
+              className="px-6 py-3 border border-indigo-600 text-indigo-700 rounded-lg hover:bg-indigo-50 transition font-medium"
+            >
+              Contact Me
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Image Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="relative w-full md:w-1/2 flex justify-center items-center p-8 md:p-12 bg-gradient-to-br from-indigo-100 via-white to-cyan-50"
+        >
+          <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-white">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/profile.jpg" // replace with her actual image
+              alt="Nseobong Ukoette"
+              fill
+              className="object-cover"
+              priority
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* Bottom quote */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1 }}
+        className="mt-10 text-center text-slate-500 italic text-sm md:text-base"
+      >
+        “Great service builds trust. Great trust drives success.”
+      </motion.p>
+    </main>
+  )
 }
